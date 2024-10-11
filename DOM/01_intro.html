@@ -4,12 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Learning</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
      <div class="bg">
-        <h1 id="heading"> DOM Learning</h1>
+        <h1 id="title" class="heading"> DOM Learning <span style="display:none"> BhaiSahab </span></h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
         </p>
      </div>
+     <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">wednesday</div>
+        <div class="day">Thrusday</div>
+     </div>
+     <script>
+        const parent =document.querySelector(".parent");
+        // console.log(parent);
+        // console.log(parent.children);
+     </script>
 </body>
 </html>
