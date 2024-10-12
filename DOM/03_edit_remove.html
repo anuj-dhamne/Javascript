@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM:edit,remove</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="lang">
+        <li>Javascript</li>
+        <li>Java</li>
+    </ul>
+</body>
+<script>
+    function addLang(langName){
+        const newLi=document.createElement("li");
+        newLi.innerText=`${langName}`;
+        document.querySelector(".lang").append(newLi);
+    }
+    addLang("cpp");
+    addLang("python");
+    function addLangOpti(langName){
+        const newLi=document.createElement("li");
+        newLi.appendChild(document.createTextNode(langName));
+        document.querySelector('.lang').appendChild(newLi);
+    }
+    addLangOpti("nodejs");
+
+    //  Edit 
+
+    const secondLang=document.querySelector("li:nth-child(2)");
+    console.log(secondLang.innerHTML);
+    const newLi=document.createElement('li');
+    newLi.textContent="C sharp";
+    secondLang.replaceWith(newLi);
+
+    // remove
+
+    const lastLang=document.querySelector('li:last-child');
+   lastLang.remove();
+
+
+
+</script>
+</html>
