@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Req</title>
+</head>
+<style>
+    body{
+        background-color: #212121;
+        color: white;
+        text-align: center;
+    }
+    .profile{
+        height: 150px;
+        width: 150px;
+        border: 2px solid white;
+        border-radius: 10px;
+    }
+    #photoDisplay{
+        padding: 10px;
+        border: 1px solid grey;
+        border-radius: 5px;
+        margin: 5px;
+    }
+</style>
+<body>
+    <div class="profile">
+        <div id="photoDisplay">Anuj</div>
+        <div id="nameDisplay">Dhamne</div>
+    </div>
+</body>
+<script>
+    const proPic=document.querySelector('#photoDisplay');
+    const proName=document.querySelector('#nameDisplay');
+
+    const reUrl="https://api.github.com/users/hiteshchoudhary";
+  const xhr= new XMLHttpRequest();
+  xhr.open('GET',reUrl);
+  xhr.onreadystatechange=function(){
+    console.log(xhr.readyState);
+    if(xhr.readyState===4){
+        const data=JSON.parse(this.responseText);
+        console.log(this.responseText);
+        
+        proPic.innerHTML=`<img src="${data.avatar_url}"></img>`;
+        // proPic.style.
+    }
+  }
+//   console.log(xhr.readyState);
+  xhr.send();
+//   console.log(xhr.readyState);
+</script>
+</html>
