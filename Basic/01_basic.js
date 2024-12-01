@@ -9,6 +9,8 @@ let value=Number(score);
 
 let myDate=new Date();
 // console.log(myDate.toLocaleString());
+
+// All this stuff get in 0 th index form 
 // console.log(myDate.getMonth());
 // console.log(myDate.getFullYear())
 // console.log(myDate.getDay())
