@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+</body>
+<script>
+    // closure : when there are function inside function . Let t2 inside t1 , when t1 return t2 then it also send its lexical scope , means outside t1 there are access of its scope varible for t2 function ..(Not send only current exec. context also send its memory ...)
+
+    function clickhandler(color){
+        return function(){
+            document.body.style.backgroundColor=`${color}`;
+        }
+    }
+    document.getElementById("orange").onclick=clickhandler("orange");
+    document.getElementById("green").onclick=clickhandler("green");
+</script>
+</html>
